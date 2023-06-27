@@ -50,9 +50,13 @@ namespace WindowsFormsApp4
 
         public object Evaluate(params object[] operands) {
             if (operands.Length == 3
-                && operands[0] is double X
-                && operands[1] is double Y
-                && operands[2] is string axe) {
+                && operands[0] is double
+                && operands[1] is double
+                && operands[2] is string) {
+
+                var X = (double)operands[0];
+                var Y = (double)operands[1];
+                var axe = (string)operands[2];
 
                 if (axe is "X")
                     return X > 0.5 ? X : 0.5;
