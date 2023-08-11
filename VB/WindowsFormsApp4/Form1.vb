@@ -1,8 +1,6 @@
 Imports DevExpress.Data.Filtering
 Imports DevExpress.Diagram.Core
 Imports System
-Imports System.ComponentModel
-Imports System.Drawing
 Imports System.Reflection
 Imports System.Windows.Forms
 
