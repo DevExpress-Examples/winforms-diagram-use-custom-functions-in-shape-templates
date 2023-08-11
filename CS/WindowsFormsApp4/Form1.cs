@@ -1,20 +1,10 @@
 ﻿using DevExpress.Data.Filtering;
 using DevExpress.Diagram.Core;
-using DevExpress.Utils.Serializing;
-using DevExpress.XtraDiagram;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
 using System.Reflection;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace WindowsFormsApp4
-{
+namespace WindowsFormsApp4 {
     public partial class Form1 : Form {
         public Form1() {
             InitializeComponent();
@@ -22,8 +12,7 @@ namespace WindowsFormsApp4
             RegisterStencil();
         }
 
-        void RegisterStencil()
-        {
+        void RegisterStencil() {
             var stream = Assembly.GetExecutingAssembly().GetManifestResourceStream("WindowsFormsApp4.CustomShapes.xml");
             var stencil = DiagramStencil.Create("CustomStencil", "Custom Shapes", stream, shapeName => shapeName);
             DiagramToolboxRegistrator.RegisterStencil(stencil);
@@ -61,8 +50,7 @@ namespace WindowsFormsApp4
                 if (axe is "X")
                     return X > 0.5 ? X : 0.5;
                 return X > 0.5 ? Y : 1;
-            }
-            else
+            } else
                 return null;
         }
     }
