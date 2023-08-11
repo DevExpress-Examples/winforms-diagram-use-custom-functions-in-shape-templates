@@ -3,13 +3,22 @@
 [![](https://img.shields.io/badge/Open_in_DevExpress_Support_Center-FF7200?style=flat-square&logo=DevExpress&logoColor=white)](https://supportcenter.devexpress.com/ticket/details/T1174052)
 [![](https://img.shields.io/badge/📖_How_to_use_DevExpress_Examples-e9f6fc?style=flat-square)](https://docs.devexpress.com/GeneralInformation/403183)
 <!-- default badges end -->
-# WinForms DiagramControl - Complex expressions and custom functions in ShapeTemplates
 
-This example demonstrates how to write complex expressions and use custom functions to calculate a `Parameter`'s value in `ShapeTemplates`. You can use custom expressions or functions when you need to implement complex logic for `Parameters` like circular motion.
+# WinForms DiagramControl - Complex Expressions and Custom Functions in Shape Templates
 
-ShapeTemplates accept common functions that implement the [ICustomFunctionOperator](https://docs.devexpress.com/CoreLibraries/DevExpress.Data.Filtering.ICustomFunctionOperator) interface. The language syntaxt used to calculate `Parameters` is the as the [Criteria Language Syntax](https://docs.devexpress.com/CoreLibraries/4928/devexpress-data-library/criteria-language-syntax).
+This example demonstrates how to specify complex expressions and use custom functions to calculate the `ShapeTemplate`'s [Parameter](https://docs.devexpress.com/CoreLibraries/DevExpress.Diagram.Core.Shapes.Parameter) value. You can use custom expressions or functions to implement complex logic for `Parameters` (for example, a circular motion).
 
-If you need to create a custom function that performs specific calculation, you need to implement the`ICustomFunctionOperator` interface and register the function using the `CriteriaOperator.RegisterCustomFunction` method.
+In this example, the custom **Sector** shape allows users to specify its angle:
+
+![image](https://github.com/DevExpress-Examples/custom_functions_ShapeTemplates_win/assets/65009440/082e6ab9-0479-492a-b6c3-734c350c5b02)
+
+## Implementation Details
+
+`ShapeTemplates` accept functions that implement the [ICustomFunctionOperator](https://docs.devexpress.com/CoreLibraries/DevExpress.Data.Filtering.ICustomFunctionOperator) interface. The [Criteria Language Syntax](https://docs.devexpress.com/CoreLibraries/4928/devexpress-data-library/criteria-language-syntax) allows you to calculate shape `Parameters`.
+
+Follow the steps below to create a custom calculation function:
+1. Create a function class that implements the [ICustomFunctionOperator](https://docs.devexpress.com/CoreLibraries/DevExpress.Data.Filtering.ICustomFunctionOperator) interface.
+2. Use the [CriteriaOperator.RegisterCustomFunction](https://docs.devexpress.com/CoreLibraries/DevExpress.Data.Filtering.CriteriaOperator.RegisterCustomFunction(DevExpress.Data.Filtering.ICustomFunctionOperator)) method to register this function.
 
 ```cs
 public class CreateArcPoint : ICustomFunctionOperator {
@@ -72,18 +81,15 @@ public class CreateArcPoint : ICustomFunctionOperator {
 
 ## Files to Review
 
-- link.cs (VB: link.vb)
-- link.js
-- ...
+- [Form1.cs](./CS/WindowsFormsApp4/Form1.cs) (VB: [Form1.vb](./VB/WindowsFormsApp4/Form1.vb))
+- [CustomShapes.xml](./CS/WindowsFormsApp4/CustomShapes.xml)
 
 ## Documentation
 
-- link
-- link
-- ...
+- [ICustomFunctionOperator](https://docs.devexpress.com/CoreLibraries/DevExpress.Data.Filtering.ICustomFunctionOperator)
+- [Shapes](https://docs.devexpress.com/WindowsForms/116882/controls-and-libraries/diagrams/diagram-items/shapes)
+- [Use Shape Templates to Create Shapes and Containers](https://docs.devexpress.com/WindowsForms/17764/controls-and-libraries/diagrams/diagram-items/creating-shapes-and-containers-using-shape-templates)
 
 ## More Examples
 
-- link
-- link
-- ...
+- [Diagram Control for WinForms - Create Custom Shapes with Connection Points](https://github.com/DevExpress-Examples/winforms-diagram-create-custom-shapes-with-connection-points)
