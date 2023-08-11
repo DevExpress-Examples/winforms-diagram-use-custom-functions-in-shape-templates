@@ -10,7 +10,7 @@ This example demonstrates how to specify complex expressions and use custom func
 
 In this example, the custom **Sector** shape allows users to specify its angle:
 
-![image](https://github.com/DevExpress-Examples/custom_functions_ShapeTemplates_win/assets/65009440/082e6ab9-0479-492a-b6c3-734c350c5b02)
+![image](https://github.com/DevExpress-Examples/winforms-diagram-use-custom-functions-in-shape-templates/assets/65009440/2400b977-2c89-4991-94c0-987d58f58ff3)
 
 ## Implementation Details
 
