@@ -6,7 +6,7 @@
 
 # WinForms DiagramControl - Complex Expressions and Custom Functions in Shape Templates
 
-This example demonstrates how to specify complex expressions and use custom functions to calculate the `ShapeTemplate`'s [Parameter](https://docs.devexpress.com/CoreLibraries/DevExpress.Diagram.Core.Shapes.Parameter) value. You can use custom expressions or functions to implement complex logic for `Parameters` (for example, a circular motion).
+This example uses complex expressions and custom functions to calculate the `ShapeTemplate`'s [Parameter](https://docs.devexpress.com/CoreLibraries/DevExpress.Diagram.Core.Shapes.Parameter) value. You can use custom expressions or functions to implement complex logic for `Parameters` (for example, a circular motion).
 
 In this example, the custom **Sector** shape allows users to specify its angle:
 
@@ -14,9 +14,10 @@ In this example, the custom **Sector** shape allows users to specify its angle:
 
 ## Implementation Details
 
-`ShapeTemplates` accept functions that implement the [ICustomFunctionOperator](https://docs.devexpress.com/CoreLibraries/DevExpress.Data.Filtering.ICustomFunctionOperator) interface. The [Criteria Language Syntax](https://docs.devexpress.com/CoreLibraries/4928/devexpress-data-library/criteria-language-syntax) allows you to calculate shape `Parameters`.
+`ShapeTemplates` accept functions that implement the [ICustomFunctionOperator](https://docs.devexpress.com/CoreLibraries/DevExpress.Data.Filtering.ICustomFunctionOperator) interface. [Criteria Language Syntax](https://docs.devexpress.com/CoreLibraries/4928/devexpress-data-library/criteria-language-syntax) allows you to calculate shape `Parameters`.
 
-Follow the steps below to create a custom calculation function:
+To create a custom calculation function, you must:
+
 1. Create a function class that implements the [ICustomFunctionOperator](https://docs.devexpress.com/CoreLibraries/DevExpress.Data.Filtering.ICustomFunctionOperator) interface.
 2. Use the [CriteriaOperator.RegisterCustomFunction](https://docs.devexpress.com/CoreLibraries/DevExpress.Data.Filtering.CriteriaOperator.RegisterCustomFunction(DevExpress.Data.Filtering.ICustomFunctionOperator)) method to register this function.
 
